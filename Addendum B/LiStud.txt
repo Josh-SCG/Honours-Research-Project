@@ -1,0 +1,7 @@
+﻿Ackoff, R. L. (1991). Teaching versus learning. Systems practice, 4(3), 179-180. 
+Ackoff, R. L., & Greenberg, D. (2008). Turning learning right side up: Putting education back on track. Pearson Prentice Hall. 
+Annetta, L. A. (2008). Video games in education: Why they should be used and how they are being used. Theory into practice, 47(3), 229-239. 
+Deshpande, A. A., & Huang, S. H. (2011). Simulation games in engineering education: A state‐of‐the‐art review. Computer applications in engineering education, 19(3), 399-410. 
+Dincelli, E., & Chengalur-Smith, I. (2020). Choose your own training adventure: designing a gamified SETA artefact for improving information security and privacy through interactive storytelling. European Journal of Information Systems, 29(6), 669-687. 
+Frasca, G. (2002). Ludology: From Representation to Simulation. Proceedings of the 29th International Conference on Computer Graphics and Interactive Techniques. Electronic Art and Animation Catalog., 
+Virvou, M., Katsionis, G., & Manos, K. (2005). Combining software games with education: Evaluation of its educational effectiveness. Journal of Educational Technology & Society, 8(2), 54-65. 
