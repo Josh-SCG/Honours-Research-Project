@@ -1,7 +1,9 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-\usepackage{cite}
+
+\usepackage[backend=biber]{biblatex}
+\addbibresource{Article.bib}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -45,12 +47,69 @@ Education, Gamification, Knowledge Domains, Ludology, Pedagogy, Serious Games
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
+Education, as it stands, is still built on a paradigm that is no longer needed in modern society. One major flaw with the current system is that it stifles the creativity and drive of some students as each level of education is largely the same and is, as such, monotonous\cite{Ackoff2008} Therefore, education requires some form of system to create an interest in learning for the students.
+\\\\
+Ackoff and Greenberg\cite{Ackoff2008} explain that the current traditional means of teaching are no longer as relevant as they once were as it is aimed to produce members of society that were likely to not question any fundamental aspects of how things operated. It is largely a system that focuses on teaching while disregarding learning as the last major stride in development in education was to industrialise it – having them operate efficiently like factories\cite{Ackoff2008}. It is a system that is designed to keep moving often employing a “No Child Left Behind” policy which results in almost no time for anything other than the standardised and constantly measured curriculum\cite{gibson2006games}. 
+\\\\
+However, with the shift into the “information age”, the requirements of the workforce have also changed. The industrial age being a time of mass-production with the emergence of various new processing technologies and the information age being characterised by the fact that information is being transmitted and generated at an ever-increasing rate due to further technological developments\cite{gibson2006games, Reigeluth1996}. The most notable changes between these ages is that the industrial age focused on conformity and compliance while initiative and diversity - where greater value is placed on each individual’s strengths and contribution to a project or organisation – is the focus of the information age\cite{Reigeluth1996}.  
+\\\\
+Reigeluth\cite{Reigeluth1996} continues and states that the current paradigm of instruction is not focused on learning but rather categorisation. Ackoff\cite{Ackoff1991} holds a similar viewpoint stating that there is more of a focus on teaching rather than learning. It should be noted that teaching and learning are very distinct from one another as both can take place without the other\cite{Ackoff1991}. Learning is defined as increasing one’s ability to perform an act effectively while trying to meet an objective through acquiring new knowledge whereas teaching is the process of providing this knowledge\cite{Ackoff1991}. Through this, it is clear that institutions under this paradigm aim to give learners a verbose vocabulary to speak on topics that they do not fully comprehend\cite{Ackoff1991}. 
+\\\\
+Due to this aforementioned paradigm shifts between the ages and in what requirements are desired by most organisations in the information age, a shift in instructional theory is also needed – one such as going from making use of passive learning through traditional teaching means to one that is centred on active learning\cite{Reigeluth1996}.
+\\\\
+With the recent developments in technology and the fact that technology, in general, is becoming more accessible, some institutions have adopted some forms of digital learning or supplement traditional teaching with digital assistance. Deshpande and Huang\cite{Deshpande2011} state that the current generation of students is the first to grow up with abundant access to technology. They continue to state that, on average, these students spend almost double the time playing video games as they do reading\cite{Deshpande2011}. It can be assumed that from when Deshpande and Huang’s\cite{Deshpande2011} published this work that this figure has increased as with technology and video games as industries. 
+\\\\
+Virvou, Katsionis and Manos\cite{Virvou2005} echo the point that computer games are popular among individuals who are in schools and as such could provide a means to deliver content in an interesting and engaging manner. 
+\\\\
+According to Annetta\cite{Annetta2008}, the movement for the inclusion of digital games to be used in teaching and training environments first started in 2003, two years after the field of ludology, the study of games, began to gain traction in academic literature. This initiative is what started the concept of a serious game as one that can be used in an academic sense to relay information. After this point in time, various examples of serious games were made for purely academic study purposes and had found a very large use in simulation for use as explanation aides and medical training.
+\\\\
+As such, the motivation behind this study is to further investigate the possibility of using video games as a means to encourage learning in teaching environments as current means of teaching may not be optimal for some individuals. This will be accomplished through studying literature in the relevant fields and identifying the instances where it is viable.
+ 
+
 
 \section{Literature Review}
 \subsection{Serious Games and Ludology}
 \subsection{A Pedagogical Approach}
+Pedagogy is the filed that deals with the transferal of knowledge in an educational environment through several lenses such as social, political and cultural\cite{Li2012}. As such it encompasses the fields and discussions of instructional design and theory as well as any learning theories – of which several are particularly useful to this study.
+\\\\
+Learning by doing functions on the principle that skills can be improved through practice and self-perfection on a particular topic or knowledge base\cite{Fisch2009}. This means of instruction has become increasingly popular amongst companies where they are able to make use of “on the job” training as it allows for a person to be productive immediately as well as become more proficient at tasks gradually\cite{Fisch2009}. 
+\\\\
+The learning by teaching method works under the assumption that learners are able to increase their understanding of a certain topic by teaching it to other learners\cite{Fisch2009}. This method of learning has garnered more usage recently as it is a viable means of learning in environments with too few teachers or instructors and increases the overall learning process\cite{Fisch2009}. Learning methods that place the learner in control are very flexible and as such can be incorporated when attempting to teach various and different fields or subjects\cite{Ackoff1991}. 
+\\\\
+Gibson et al.\cite{gibson2006games} list and summarise several learning and instructional design theories that have the potential to be applied to a game used for learning. This study will, however, only look at Merrill’s First Principles of Instruction as it is the most recent of the ones depicted  and is one that is very expansive and as such can be used in a variety of manners\cite{gibson2006games}.
+\\\\
+Before discussing the principles that the name refers to in this theory, Merrill\cite{Merrill2002} provides a few definitions for the terms made use of. A principle in this context is a relationship that is always true regardless of the environment it is applied within – this being the driving factor for deciding to make use of this theory\cite{Merrill2002}. A practice is any instructional activity\cite{Merrill2002}. A program is a means of instruction that makes use of several practices\cite{Merrill2002}. Merrill\cite{Merrill2002} states that the first principles described are able to be implemented in any instructional system or environment as they are “design-oriented” and as such relate more to creating learning environments rather than describing the means of knowledge transfer. Each of the following principles is also accompanied by three “corollaries” each of which Merrill\cite{Merrill2002} likewise explains.
+\\\\
+The first principle of Merrill’s First Principles of Instruction is that the learning is problem centred. This principle describes three corollaries, the first of which being “Show Task” which states that learners should be shown the types of problems they will be solving or will be able to solve with the knowledge that they attain\cite{Merrill2002}. The next is the “Task Level” which explains that the problems presented should keep learners engaged due to the complexity and not just the action of solving it\cite{Merrill2002}. The last corollary, “Problem Progression” describes that the problems presented should have some form of increasing complexity while still being comparable to the previous iteration of the type of problem\cite{Merrill2002}.
+\\\\
+The second principle is Activation which means that learning happens whenever previous experiences are used\cite{Merrill2002}. The first corollary, “Previous Experience”, states that the learning process is enhanced when a learner is able to draw upon relevant past experiences and apply the associate knowledge as a foundation for new knowledge\cite{Merrill2002}. “New Knowledge” is the second and explains that learners should be provided with a relevant experience as an additional foundation to add to their knowledge base\cite{Merrill2002}. The last corollary is “Structure” and details that learners should be encouraged to organise new knowledge according to some relevant structure\cite{Merrill2002}.
+\\\\
+The third principle, Demonstration, proposes that learning takes place when the activities that are undertaken impart the knowledge instead of stating the information\cite{Merrill2002}. “Demonstration Consistency” explains that any examples or visualisation should be kept in line with the original learning goals\cite{Merrill2002}. The next is “Learner Guidance” and states that learners should be shown where the relevant information for problems can be found be it in the form of comparative examples or various representation of one source\cite{Merrill2002}. “Relevant Media” explains that when media is used as a means of demonstration, different types can be used provided that they do not fight for a learner’s attention\cite{Merrill2002}.
+\\\\
+The fourth principle is Application which states that learning takes place when learners actively solve problems with the new knowledge they have acquired\cite{Merrill2002}. “Practice Consistency” is similar to Demonstration consistency but with a focus on the application of knowledge\cite{Merrill2002}. “Diminishing Coaching” is where the learners are provided with relevant feedback, but it is slowly lessened over time\cite{Merrill2002}. It is also important that the problems provided to learners for practice have a good variety, as explained as “Varied Problems”\cite{Merrill2002}.
+\\\\
+The fifth, and final, principle is Integration which is when the knowledge a learner has acquired is used by them in their everyday life\cite{Merrill2002}. The first corollary, “Watch Me”, explains that learners are provided to showcase the new knowledge or skill they have acquired\cite{Merrill2002}. “Reflection” deals with giving learners time to be able to debate with others on the topic involved\cite{Merrill2002}. Lastly, “Creation” states that learners should be able to make use of their new knowledge or skill in some personal capacity\cite{Merrill2002}.
+\\
+\begin{figure}[htbp]
+\centerline{\includegraphics[scale=0.35]{merrill2.png}}
+\caption{Own Image summarising Merrill's First Principles}
+\label{fig}
+\end{figure}
+\\
+The principles and corollaries provided by Merrill\cite{Merrill2002} provide an expansive and detailed structure to be used when developing any learning opportunity making it an exceptional choice to adapt specifically to a digital game learning system.  It does, however, lack a comprehensive discussion on how to keep learners engaged with the content and, as such, the next subsection will discuss some theories pertaining to the role of motivation in learning.
+\\\\
+Another important factor to consider is how to keep learners engaged and motivated with the instructional material. One model for motivating learners is the ARCS Model which was developed by John Keller which is frequently referenced in the aforementioned field of instructional design\cite{Kapp2012a}. It is comprised of four main elements with each focusing on designing instruction in a different way\cite{Kapp2012a}. 
+\\\\
+The first of these is Attention and it is an element that is concerned with gaining and then keeping the learners’ interest. There are three main methods to accomplish this with the first being gaining attention through the use of relatable examples or surprise. The next is to create curiosity within the learners through means such as role-playing or hands-on examples. The last means to keep attention is the variability which means periodically changing the method of delivery\cite{Kapp2012a}.
+\\\\
+Relevance refers to having the content be relevant to the learner and Kapp\cite{Kapp2012a} mentions that this can be done through orienting the environment around achieving goals, creating a link between the motives of learners and that of the instruction means, displaying that the content is in somewhat familiar to the learners and finally developing a model of the results of learning the presented knowledge.
+\\\\
+Another element of this model, Confidence, is the expectations of success set by the learner and as such when they meet these expectations they are confident in their ability to do the work\cite{Kapp2012a}. This can be aided by providing learners with clear expectations and requirements upfront about the skill or knowledge. It is also helpful to provide smaller opportunities to succeed as with each success the learners will become more confident\cite{Kapp2012a}.
+\\\\
+The last element in the ARCS model is Satisfaction and is concerned with giving learners a sense of accomplishment and that the effort in the learning process has some value and weight to it\cite{Kapp2012a}. This can be accomplished by allowing learners to see how their newfound knowledge can be used, either through the use of a real-world demonstration or via some form of simulation\cite{Kapp2012a}.
+
+
+
 \subsection{Gamification and the Knowledge Domains}
 
 \section{Methodology}
@@ -76,7 +135,9 @@ The following steps were taken to determine how serious games can be used for th
 \subsection{Recommendations per Knowledge Domain}
 \subsection{Limitations and Future Research}
 
+\printbibliography
 
+%%------------------------------------------------------------
 \subsection{Maintaining the Integrity of the Specifications}
 
 The IEEEtran class file is used to format your paper and style the text. All margins, 
@@ -289,5 +350,6 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \vspace{12pt}
 \color{red}
 IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+%%-------------------------------------------------------------------
 
 \end{document}

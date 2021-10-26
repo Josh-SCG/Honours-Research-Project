@@ -1,0 +1,332 @@
+% Encoding: UTF-8
+
+@Book{gibson2006games,
+  author    = {Gibson, David and Aldrich, Clark and Prensky, Marc},
+  publisher = {IGI Global},
+  title     = {Games and simulations in online learning: research and development frameworks: research and development frameworks},
+  year      = {2006},
+}
+
+@Article{Ackoff1991,
+  author  = {Ackoff, Russell L},
+  journal = {Systems practice},
+  title   = {Teaching versus learning},
+  year    = {1991},
+  number  = {3},
+  pages   = {179-180},
+  volume  = {4},
+  isbn    = {1573-9295},
+}
+
+@Book{Ackoff2008,
+  author = {Ackoff, Russell L and Greenberg, Daniel},
+  title  = {Turning learning right side up: Putting education back on track},
+  year   = {2008},
+  isbn   = {0132716429},
+}
+
+@Article{Annetta2008,
+  author  = {Annetta, Leonard A},
+  journal = {Theory into practice},
+  title   = {Video games in education: Why they should be used and how they are being used},
+  year    = {2008},
+  number  = {3},
+  pages   = {229-239},
+  volume  = {47},
+  isbn    = {0040-5841},
+}
+
+@Article{Burke2009,
+  author  = {Burke, James William and McNeill, Michael and Charles, Darryl and Morrow, Philip and Crosbie, Jacqui and McDonough, Suzanne},
+  journal = {2009 Conference in Games and Virtual Worlds for Serious Applications},
+  title   = {Serious games for upper limb rehabilitation following stroke},
+  year    = {2009},
+  pages   = {103-110},
+  isbn    = {0769535887},
+}
+
+@Article{Costanza2014,
+  author  = {Costanza, Robert and Chichakly, Karim and Dale, Virginia and Farber, Steve and Finnigan, David and Grigg, Kat and Heckbert, Scott and Kubiszewski, Ida and Lee, Harry and Liu, Shuang},
+  journal = {Ecosystem Services},
+  title   = {Simulation games that integrate research, entertainment, and learning around ecosystem services},
+  year    = {2014},
+  pages   = {195-201},
+  volume  = {10},
+  isbn    = {2212-0416},
+}
+
+@Article{DeGloria2014,
+  author  = {De Gloria, Alessandro and Bellotti, Francesco and Berta, Riccardo},
+  journal = {International Journal of Serious Games},
+  title   = {Serious Games for education and training},
+  year    = {2014},
+  number  = {1},
+  volume  = {1},
+  isbn    = {2384-8766},
+}
+
+@Article{Dempsey1996,
+  author = {Dempsey, John V and Lucassen, Barbara A. and Haynes, Linda L. and Casey, Maryann S.},
+  title  = {Instructional Applications of Computer Games},
+  year   = {1996},
+}
+
+@Article{Deshpande2011,
+  author  = {Deshpande, Amit A and Huang, Samuel H},
+  journal = {Computer applications in engineering education},
+  title   = {Simulation games in engineering education: A state‐of‐the‐art review},
+  year    = {2011},
+  number  = {3},
+  pages   = {399-410},
+  volume  = {19},
+  isbn    = {1061-3773},
+}
+
+@Article{Dincelli2020,
+  author  = {Dincelli, Ersin and Chengalur-Smith, InduShobha},
+  journal = {European Journal of Information Systems},
+  title   = {Choose your own training adventure: designing a gamified SETA artefact for improving information security and privacy through interactive storytelling},
+  year    = {2020},
+  number  = {6},
+  pages   = {669-687},
+  volume  = {29},
+  isbn    = {0960-085X},
+}
+
+@Article{Eskelinen2001,
+  author  = {Eskelinen, Markku},
+  journal = {Game studies},
+  title   = {The gaming situation},
+  year    = {2001},
+  number  = {1},
+  pages   = {68},
+  volume  = {1},
+}
+
+@Article{Fisch2009,
+  author  = {Fisch, Dominik and Janicke, Martin and Kalkowski, Edgar and Sick, Bernhard},
+  journal = {2009 IEEE Symposium on Intelligent Agents},
+  title   = {Learning by teaching versus learning by doing: Knowledge exchange in organic agent systems},
+  year    = {2009},
+  pages   = {31-38},
+  isbn    = {1424427673},
+}
+
+@Article{Frasca2002,
+  author  = {Frasca, Gonzalo},
+  journal = {Proceedings of the 29th International Conference on Computer Graphics and Interactive Techniques. Electronic Art and Animation Catalog.},
+  title   = {Ludology: From Representation to Simulation},
+  year    = {2002},
+  pages   = {134-137},
+}
+
+@InBook{Frasca2013,
+  author  = {Frasca, Gonzalo},
+  pages   = {243-258},
+  title   = {Simulation versus narrative: Introduction to ludology},
+  year    = {2013},
+  isbn    = {0203700457},
+  journal = {The video game theory reader},
+}
+
+@Article{Gomez2019,
+  author  = {Gomez, Jesse and Barnett, Michael and Grill-Spector, Kalanit},
+  journal = {Nature human behaviour},
+  title   = {Extensive childhood experience with Pokémon suggests eccentricity drives organization of visual cortex},
+  year    = {2019},
+  number  = {6},
+  pages   = {611-624},
+  volume  = {3},
+  isbn    = {2397-3374},
+}
+
+@Book{Huizinga1949,
+  author = {Huizinga, Johan and Hull, Richard Francis Carrington},
+  title  = {Homo Ludens. A Study of the Play-element in Culture.[Translated by RFC Hull.]},
+  year   = {1949},
+}
+
+@Book{Kapp2012a,
+  author = {Kapp, Karl M},
+  title  = {The gamification of learning and instruction: game-based methods and strategies for training and education},
+  year   = {2012},
+  isbn   = {1118096347},
+}
+
+@Article{Kapp2012b,
+  author  = {Kapp, Karl M},
+  journal = {The gamification of learning and instruction: game-based methods and strategies for training and education},
+  title   = {What is gamification},
+  year    = {2012},
+  pages   = {1-23},
+}
+
+@Article{Kristiadi2019,
+  author  = {Kristiadi, Dedy Prasetya and Hasanudin, Muhaimin and Sutrisno, Sutrisno and Suwarto, Suwarto},
+  journal = {International Journal for Educational and Vocational Studies},
+  title   = {The Effect of Adventure Video Games on the Development of Student’s Character and Behavior},
+  year    = {2019},
+  number  = {4},
+  pages   = {330-334},
+  volume  = {1},
+  isbn    = {2684-6950},
+}
+
+@Book{Li2012,
+  author = {Li, Guofang},
+  title  = {Culturally contested pedagogy: Battles of literacy and schooling between mainstream teachers and Asian immigrant parents},
+  year   = {2012},
+  isbn   = {0791482545},
+}
+
+@Article{Liu2017,
+  author  = {Liu, De and Santhanam, Radhika and Webster, Jane},
+  journal = {MIS quarterly},
+  title   = {Toward Meaningful Engagement: A Framework for Design and Research of Gamified Information Systems},
+  year    = {2017},
+  number  = {4},
+  volume  = {41},
+  isbn    = {0276-7783},
+}
+
+@Book{Manovich2002,
+  author = {Manovich, Lev},
+  title  = {The language of new media},
+  year   = {2002},
+  isbn   = {0262296918},
+}
+
+@Article{Mayer2019,
+  author  = {Mayer, Richard E},
+  journal = {Annual review of psychology},
+  title   = {Computer games in education},
+  year    = {2019},
+  pages   = {531-549},
+  volume  = {70},
+  isbn    = {0066-4308},
+}
+
+@Article{Merrill2002,
+  author  = {Merrill, M David},
+  journal = {Educational technology research and development},
+  title   = {First principles of instruction},
+  year    = {2002},
+  number  = {3},
+  pages   = {43-59},
+  volume  = {50},
+  isbn    = {1556-6501},
+}
+
+@Article{Mertala2019,
+  author  = {Mertala, Pekka and Meriläinen, Mikko},
+  journal = {Global studies of Childhood},
+  title   = {The best game in the world: Exploring young children’s digital game–related meaning-making via design activity},
+  year    = {2019},
+  number  = {4},
+  pages   = {275-289},
+  volume  = {9},
+  isbn    = {2043-6106},
+}
+
+@Article{Ranalli2008,
+  author  = {Ranalli, Jim},
+  journal = {Computer Assisted Language Learning},
+  title   = {Learning English with The Sims: exploiting authentic computer simulation games for L2 learning},
+  year    = {2008},
+  number  = {5},
+  pages   = {441-455},
+  volume  = {21},
+  isbn    = {0958-8221},
+}
+
+@Article{Reigeluth1996,
+  author  = {Reigeluth, Charles M},
+  journal = {Educational technology},
+  title   = {A new paradigm of ISD?},
+  year    = {1996},
+  number  = {3},
+  pages   = {13-20},
+  volume  = {36},
+  isbn    = {0013-1962},
+}
+
+@Article{Sheng2007,
+  author  = {Sheng, Steve and Magnien, Bryant and Kumaraguru, Ponnurangam and Acquisti, Alessandro and Cranor, Lorrie Faith and Hong, Jason and Nunge, Elizabeth},
+  journal = {Proceedings of the 3rd symposium on Usable privacy and security},
+  title   = {Anti-phishing phil: the design and evaluation of a game that teaches people not to fall for phish},
+  year    = {2007},
+  pages   = {88-99},
+}
+
+@Article{Squire2003,
+  author  = {Squire, Kurt},
+  journal = {Int. J. Intell. Games & Simulation},
+  title   = {Video games in education},
+  year    = {2003},
+  number  = {1},
+  pages   = {49-62},
+  volume  = {2},
+}
+
+@Article{Tao2009,
+  author  = {Tao, Yu-Hui and Cheng, Chieh-Jen and Sun, Szu-Yuan},
+  journal = {Computers & Education},
+  title   = {What influences college students to continue using business simulation games? The Taiwan experience},
+  year    = {2009},
+  number  = {3},
+  pages   = {929-939},
+  volume  = {53},
+  isbn    = {0360-1315},
+}
+
+@Article{Virvou2005,
+  author  = {Virvou, Maria and Katsionis, George and Manos, Konstantinos},
+  journal = {Journal of Educational Technology & Society},
+  title   = {Combining software games with education: Evaluation of its educational effectiveness},
+  year    = {2005},
+  number  = {2},
+  pages   = {54-65},
+  volume  = {8},
+  isbn    = {1176-3647},
+}
+
+@Article{Wouters2013,
+  author  = {Wouters, Pieter and Van Nimwegen, Christof and Van Oostendorp, Herre and Van Der Spek, Erik D},
+  journal = {Journal of educational psychology},
+  title   = {A meta-analysis of the cognitive and motivational effects of serious games},
+  year    = {2013},
+  number  = {2},
+  pages   = {249},
+  volume  = {105},
+  isbn    = {1939-2176},
+}
+
+@Article{highsmith2001agile,
+  author    = {Highsmith, Jim and Cockburn, Alistair},
+  journal   = {Computer},
+  title     = {Agile software development: The business of innovation},
+  year      = {2001},
+  number    = {9},
+  pages     = {120--127},
+  volume    = {34},
+  publisher = {IEEE},
+}
+
+@Article{kivunja2017understanding,
+  author    = {Kivunja, Charles and Kuyini, Ahmed Bawa},
+  journal   = {International Journal of higher education},
+  title     = {Understanding and applying research paradigms in educational contexts.},
+  year      = {2017},
+  number    = {5},
+  pages     = {26--41},
+  volume    = {6},
+  publisher = {ERIC},
+}
+
+@Article{vaishnavi2004design,
+  author = {Vaishnavi, Vijay and Kuechler, William},
+  title  = {Design research in information systems},
+  year   = {2004},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
