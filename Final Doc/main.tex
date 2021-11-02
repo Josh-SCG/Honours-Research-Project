@@ -41,9 +41,13 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{float}
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{booktabs}
+\usepackage{multirow}
 \usepackage[final]{pdfpages}
 \usepackage{mathpazo} % Use the Palatino font by default
 
+\usepackage{caption}
+\usepackage[list=false]{subcaption}
 \usepackage[backend=biber,style=apa,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
 
 \addbibresource{honsDoc.bib} % The filename of the bibliography
@@ -100,7 +104,7 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{titlepage}
 \begin{center}
-\includegraphics[scale=0.3]{nwu.png}\\[0.4cm]
+\includegraphics[scale=0.3]{Figures/nwu.png}\\[0.4cm]
 
 {\scshape\LARGE \univname\par}\vspace{0.5cm} % University name
 \textsc{\Large School of Computer Science and Information Systems}\\[0.5cm] % Thesis type
