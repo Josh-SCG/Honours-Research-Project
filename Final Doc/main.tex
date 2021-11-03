@@ -23,10 +23,10 @@
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-11pt, % The default document font size, options: 10pt, 11pt, 12pt
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
 oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
 english, % ngerman for German
-singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+onehalfspacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
 %nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
 %liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
@@ -37,6 +37,8 @@ headsepline, % Uncomment to get a line under the header
 %chapterinoneline, % Uncomment to place the chapter title next to the number on one line
 %consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
+
+
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage[utf8]{inputenc} % Required for inputting international characters
@@ -45,7 +47,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{multirow}
 \usepackage[final]{pdfpages}
 \usepackage{mathpazo} % Use the Palatino font by default
-
+\usepackage{changepage}
 \usepackage{caption}
 \usepackage[list=false]{subcaption}
 \usepackage[backend=biber,style=apa,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
@@ -60,11 +62,11 @@ headsepline, % Uncomment to get a line under the header
 
 \geometry{
 	paper=a4paper, % Change to letterpaper for US letter
-	inner=1.5cm, % Inner margin
-	outer=1.5cm, % Outer margin
-	bindingoffset=0.3cm, % Binding offset
-	top=0.5cm, % Top margin
-	bottom=0.5cm, % Bottom margin
+	inner=2.5cm, % Inner margin
+	outer=2cm, % Outer margin
+	%bindingoffset=0.3cm, % Binding offset
+	top=2cm, % Top margin
+	bottom=2.5cm, % Bottom margin
 	%showframe, % Uncomment to show how the type block is set on the page
 }
 
@@ -104,7 +106,7 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{titlepage}
 \begin{center}
-\includegraphics[scale=0.3]{Figures/nwu.png}\\[0.4cm]
+\includegraphics[scale=0.4]{Figures/nwu.png}\\[.4cm]
 
 {\scshape\LARGE \univname\par}\vspace{0.5cm} % University name
 \textsc{\Large School of Computer Science and Information Systems}\\[0.5cm] % Thesis type
@@ -183,7 +185,8 @@ The Thesis Abstract is written here (and usually kept to just this page). The pa
 % Uncomment the lines as you write the chapters
 
 \include{Chapters/Chapter1}
-\include{Chapters/Chapter2} 
+\include{Chapters/Chapter2}
+\include{Chapters/Chapter3}  
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
