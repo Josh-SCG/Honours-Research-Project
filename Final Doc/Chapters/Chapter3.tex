@@ -52,8 +52,18 @@ The Scrum methodology makes use of so-called Sprints in the development process 
 \subsection{Article}
 The development of the article followed the interpretivist paradigm and made use of a combination of Design Science and the Scrum Agile Methodology throughout the development life cycle. The Scrum Methodology was discussed above and as such only the design science and interpretivist paradigm will be discussed here. 
 \\\\
+The interpretivistic paradigm was chosen as it focuses on research that encompasses various aspects of the social world and society as each individual's  experience is subjective to them \citep{kivunja2017understanding}. This paradigm further states that understanding of any aspect of the social world cannot be fully understanded through just one lens which is why this project focused on the three fields of pedagogy, ludology and gamification \citep{kivunja2017understanding}.
+\\\\
+Design Science was used in combination with the Scrum Agile methodology for the development of the article where each Sprint from the Scrum Methodology would mostly correlate to the Process steps of design science as shown in Figure \ref{des}. As such the following Sprints were used throughout the project for the article:
+\begin{itemize}
+\item Sprint 1: Research Proposal which is the Awareness of Problem step
+\item Sprint 2: Project Planning which is the Suggestion step
+\item Sprint 3: Sampling and Literature Collection which is the Development step
+\item Sprint 4: Write Article which is the Development step
+\item Sprint 5: Finalise Article which is the Evaluation and Conclusion steps
+\end{itemize}
 
-
+\noindent 
 
 \section{Description of the Development of the Artefact}
 %Comprehensive report on the way in which each phase of the life cycle was applied in the development of this artefact.
@@ -69,10 +79,40 @@ The development of the article followed the interpretivist paradigm and made use
 
 \subsection{Sprint 2: Initial Development}
 
+\begin{minted}[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+bgcolor=gray!10,
+fontsize=\footnotesize,
+breaklines, 
+linenos,
+]{csharp}
+/*OnFloor() checks if player is on ground
+     * part of ground detection system
+     */
+    private bool OnFloor() 
+    {
+        //array of raycasts? to check if touching "floor"
+        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale / 3f, Quaternion.Euler(0, 0, 0), floorMask);
+        bool check = false;
+        //cycle through array >> if none true then not on floor, if just one, on floor
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i]) 
+            {
+                check = true;
+            }
+        }
+        return check;
+    }
+\end{minted}
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.8]{Figures/floor.png}
 \caption{Floor Detection Visualisation (Own Creation)}
+\label{floor}
 \end{figure}
 
 \begin{figure}[H]
