@@ -90,27 +90,66 @@ The key aspects from this sprint's knowledge gathering phase were that the ProBu
 \\\\
 Additionally, the character controller, that being how the in-game character is affected by a user's inputs, would be developed from the ground up in place of using the one pre-built by Unity as it allows for the most customisation of features. 
 
-
-
 \subsection{Sprint 2: Initial Development}
+During this sprint, the basis to develop future levels was completed. This included, from this contribution, the development of various back-end scripts. These scripts form the basic character controller of the game are used in conjunction. These included scripts for:
+\begin{itemize}
+\item Camera Movement and the Input Controls\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/PlayerCameraLook.cs}{PlayerCameraLook.cs}}
 
+\item Player Movement and the Input Controls\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/PlayerMovement.cs}{PlayerMovement.cs}}
 
+\item Linking two objects together\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/LinkObjectMovement.cs}{LinkObjectMovement.cs}}
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.8]{Figures/floor.png}
-\caption{Floor Detection Visualisation (Own Creation)}
-\label{floor}
-\end{figure}
-
-
-
+\item Ability to pick up objects\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/PickUp.cs}{PickUp.cs}}
+\end{itemize}
+\newpage
+\noindent \textbf{Camera Movement}\\
+The camera movement script handles inputs from the mouse and converts them into how the main character perspective camera should be rotated. Additionally, it also rotates the player model and a hidden orientation object which is used to keep track of the direction the user is looking for other functions. The range of motion is restricted with the \texttt{Mathf.Clamp()} function from Unity's Library in such a manner that the user can freely move horizontally but not vertically. 
+\\\\
+\textbf{Player Movement}\\
+The player movement script is responsible for handling all movement based interactions and as such was tested intensively with the values for variables being tweaked constantly. Figure \ref{flrtst} shows the in engine scene where the testing took place at first. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.33]{Figures/testold.png}
 \caption{Test Scene for Initial Player Movement}
+\label{flrtst}
 \end{figure}
+
+\noindent At this point of development this included the following:
+\begin{itemize}
+\item Floor detection and what type of floor
+\item Tracking and modifying the velocity and direction of the player's movement
+\item Amount of friction and drag to apply to the player
+\item Other functionality such as jumping, crouching and dashing
+\end{itemize}
+
+\noindent The floor detection aspect of this script is vital to the entire functionality of the movement system as it declares when, and what type of, movement is being applied to the player from a user's inputs. At this point, there are two main components to this functionality - checking when the player is on flat ground as well as a slanted area such as a slope or hill. 
+\\\\
+The \texttt{OnFLoor()} function is used to determine whenever the player is on an object with the Floor layermask and returns a boolean based on the result. A layermask is an editor based flag that interacts with any raycast or collider based functions. When the \texttt{OnFLoor()} returns false, the user's inputs are greatly reduced resulting in it having no impact in some cases. Due to this, the function went through several iterations until one was found to be effective in all use cases. 
+\\\\
+The initial function made use of a singular downward raycast, that being an object used which returns a boolean depending on if an object with the appropriate mask or tag is in its' path, which caused issues when a player would be halfway over some edge within a scene. The second iteration saw use of the \texttt{CheckSphere()} function which returns a boolean if the object with a specific mask is within the bounds of a sphere originating at a certain point. This method of implementation had issues where a user would be classified as "on the floor" if they were close enough to a wall while in the air. The final implementation of this function took inspiration from how the colliders in a two dimensional game work within Unity - that being a box collider. The \texttt{OverlapBox()} works similarly to the \texttt{CheckSphere()} function with the distinction bring the shape of the object. This allowed for a tighter fitting method of detection which has no known issues. Figure \ref{floor} illustrates these issues visually. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.61]{Figures/floor.png}
+\caption{Floor Detection Visualisation (Own Creation)}
+\label{floor}
+\end{figure}
+
+\noindent The user's input for movement consisted of the W, A, S and D key on the keyboard with W and S affecting vertical movement and A and D affecting the horizontal movement. The movement direction was calculated from these and the current state of the orientation object with a force added in that direction through the \texttt{AddForce()} function. The friction and drag variables were handled by Unity with the script altering the values depending on where the player is - either on the floor or the air. 
+\\\\
+The remaining functions this script implements are \texttt{Jump()} using the Space Bar, \texttt{Dash()} with the Left Shift key, \texttt{Crouch()} and \texttt{unCrouch()} which are activated with the Left Control key. The \texttt{Jump()} adds a vertical force to the player which simulates a jump and can only be done if they are on the floor. \texttt{Dash()} on the other hand can be used either on the floor, where an additional force as added to the player launching them forward, or in the air, where the player is moved in the direction the camera is facing. This function can also be used infinitely. \texttt{Crouch()} and \texttt{unCrouch()} are inverse functions, meaning the effects of one are undone by the other. When used, the player is shrunken down slightly and has their movement speed reduced.
+\\\\
+\textbf{Linking Objects}\\
+This script caused two objects, which are set in the editor, as shown in Figure \ref{link}, where the script is placed on one of the objects and the other assigned as the "Linked Object Position" variable. This caused the object the script is placed on to warp to and follow the other object. This was used for the ball object the player interacts with and the camera.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{Figures/link.png}
+\caption{Linking Objects in Editor}
+\label{link}
+\end{figure}
+
 
 \begin{figure}[H]
 \centering
