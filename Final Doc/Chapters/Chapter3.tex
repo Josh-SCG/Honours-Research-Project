@@ -15,7 +15,7 @@ This research project was split into two main aspects:
 
 \noindent For the first aspect of this project, the resulting outcome was an academic article titled, \textit{"Linking Gamification, Ludology and Pedagogy: How to Use Serious Games for Various Knowledge Domains"}. As stipulated in the title, the fields of gamification, ludology and pedagogy were the focus of this research aspect of the project. In this article, the question posed by this project is again reiterated and sequentially answered. The article is attached to this document under Appendix  \ref{AppendixC}. 
 \\\\
-The artefact accompanying this research project is a digital computer came which was developed as part of a group effort as mentioned previously. While this artefact is separate from the individual research studies conducted by its' group members, it may have been influenced by the topics being researched. The artefact is titled \textit{"Puzzle Ball: Spherical Shadows"} and is further categorised as a 3D puzzle platformer with aspects of action gameplay played in first person. A playable version of the artefact is available on the website itch.io website\footnote{\url{https://josh-scg.itch.io/puzzle-ball-spherical-shadows}} and the source code of the artefact is available on GitHub\footnote{\url{https://github.com/GCWehmeyer/Spherical_Shadows}}$^{,}$\footnote{\url{https://github.com/Josh-SCG/Spherical_Shadows}}
+The artefact accompanying this research project is a digital computer came which was developed as part of a group effort as mentioned previously. While this artefact is separate from the individual research studies conducted by its' group members, it may have been influenced by the topics being researched. The artefact is titled \textit{"Puzzle Ball: Spherical Shadows"} and is further categorised as a 3D puzzle platformer with aspects of action gameplay played in first person. A playable version of the artefact is available on the website itch.io\footnote{\url{https://josh-scg.itch.io/puzzle-ball-spherical-shadows}} and the source code of the artefact is available on GitHub\footnote{\url{https://github.com/GCWehmeyer/Spherical_Shadows}}$^{,}$\footnote{\url{https://github.com/Josh-SCG/Spherical_Shadows}}
 
 \section{Development Methodologies Followed and the Phases}
 % Briefly provide general background on the life cycle that was followed and why it is appropriate to this artefact.
@@ -63,50 +63,38 @@ Design Science was used in combination with the Scrum Agile methodology for the 
 \item Sprint 5: Finalise Article which is the Evaluation and Conclusion steps
 \end{itemize}
 
-\noindent 
+\newpage 
 
 \section{Description of the Development of the Artefact}
-%Comprehensive report on the way in which each phase of the life cycle was applied in the development of this artefact.
+This section will detail the development of the computer game artefact but will only include specifics on the aspects which were worked on individually - as such the contributions and accompanying processes of the other group members will not be discussed. 
 
 \subsection{Sprint 1: Know the Basics}
+The initial sprint for development of the artefact had a main focus on each group member learning the basics of both game design in general as well the how to use the Unity Editor, specifically the 2019.4.22f version. The reason for going with this build of the editor was due to the fact that at the time, it was one that was targeted for long term support by Unity. 
+\\\\
+The aim of learning the basics of game design saw each member in the group informally gathering information on various related topics within game design. This included topics such as level design and the psychology used during game design in addition to examining so-called "Developer Logs", which is typically a video presentation on the progress made at certain increments during the overall development of a game, by other game designers to gain insight into how the structure of game development typically flows. 
+\\\\
+As a part this process, each member of the group was tasked with developing a singular level. This was done with the aim to gain practical experience with the Unity Editor as well as serve as a means for each group member to discuss what had been discovered while gathering insight into game design and share that acquired knowledge with the other members. Figure \ref{1lvl} shows one of the levels created.
 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.33]{Figures/level.png}
 \caption{Individual First Level}
+\label{1lvl}
 \end{figure}
+
+\noindent The resources made use of for this particular sprint, those being any material used in the knowledge gathering phase, were mostly found through a publicly available online excel sheet\footnote{\url{https://docs.google.com/spreadsheets/d/1QhFyPfYSjHv7PjibGrslF3mNW_CIDXWv9o-iQgLbu1o}} which contains information of various aspects of game design.
+\\\\
+This sprint was concluded upon the discussion of what each group member had learnt and with the next sprint being planned. 
+\\\\
+The key aspects from this sprint's knowledge gathering phase were that the ProBuilder tool kit within the Unity Editor would be used for the construction and development of levels moving forward as it allowed for the creation on a singular large object which could be adjusted and shaped. Using this one object in place of many smaller ones arranged in the same shape allowed for a less computational intensive process when the application is run due to the way a scene is loaded. 
+\\\\
+Additionally, the character controller, that being how the in-game character is affected by a user's inputs, would be developed from the ground up in place of using the one pre-built by Unity as it allows for the most customisation of features. 
+
 
 
 \subsection{Sprint 2: Initial Development}
 
-\begin{minted}[
-frame=lines,
-framesep=2mm,
-baselinestretch=1.2,
-bgcolor=gray!10,
-fontsize=\footnotesize,
-breaklines, 
-linenos,
-]{csharp}
-/*OnFloor() checks if player is on ground
-     * part of ground detection system
-     */
-    private bool OnFloor() 
-    {
-        //array of raycasts? to check if touching "floor"
-        Collider[] hitColliders = Physics.OverlapBox(transform.position, transform.localScale / 3f, Quaternion.Euler(0, 0, 0), floorMask);
-        bool check = false;
-        //cycle through array >> if none true then not on floor, if just one, on floor
-        for (int i = 0; i < hitColliders.Length; i++)
-        {
-            if (hitColliders[i]) 
-            {
-                check = true;
-            }
-        }
-        return check;
-    }
-\end{minted}
+
 
 \begin{figure}[H]
 \centering
@@ -115,12 +103,29 @@ linenos,
 \label{floor}
 \end{figure}
 
+
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.33]{Figures/testold.png}
 \caption{Test Scene for Initial Player Movement}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[scale=1.4]{Figures/crossold.png}
+  \caption{Place holder Crosshair}
+\end{subfigure}%
+\begin{subfigure}{0.5\textwidth}
+  \centering
+  \includegraphics[scale=1]{Figures/crosshair.png}
+  \caption{Finalised Crosshair made with GIMP}
+\end{subfigure}
+\caption{Crosshair Development}
+\end{figure}
 
 
 
