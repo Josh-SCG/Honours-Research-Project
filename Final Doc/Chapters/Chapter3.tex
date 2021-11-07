@@ -150,6 +150,10 @@ This script caused two objects, which are set in the editor, as shown in Figure 
 \label{link}
 \end{figure}
 
+\noindent \textbf{Pick Up}\\
+This script provides functionality for the user to interact with objects, specifically the ball object used throughout the game, and be able to pick them up, hold them for a time and throw them when required. It is comprised of three main functions - \texttt{PickUpObject()}, \texttt{DropThrowObject()} and \texttt{MoveObject()}. This script uses a raycast sent towards the centre of the screen and if an object with a rigid body, such as the player (excluded from this script) which is an object that is capable of interacting with the physics engine of the game, is in the path it is picked up by using the E key. Once this is done the object is moved toward the player's hand, shrunken down slightly and the collider of the object made inert. From this point, the object is then moved alongside the player with the linking script and when E is pressed while the player has an object it is launched in the direction the player is looking - that is the centre of the screen.
+\\\\
+Aside from scripts, a player prefab and crosshair were created. A prefab is a collection of objects, scripts and/or relations set in the editor that can be stored as if it were one object so that it can be "dragged and dropped" as needed. Figure \ref{cross} shows the place holder crosshair that was used until this point and the finalised crosshair. This was implemented to display where the centre of the screen is to a user.
 
 \begin{figure}[H]
 \centering
@@ -164,8 +168,10 @@ This script caused two objects, which are set in the editor, as shown in Figure 
   \caption{Finalised Crosshair made with GIMP}
 \end{subfigure}
 \caption{Crosshair Development}
+\label{cross}
 \end{figure}
 
+\noindent This sprint was concluded when all the above mentioned items were completed in addition to certain others from the remaining group members. During the review and retrospective stages, other functions and scripts were discussed for implementation in the following sprint.
 
 
 \subsection{Sprint 3: Full Scale Development}
