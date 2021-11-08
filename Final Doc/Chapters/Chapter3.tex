@@ -46,7 +46,6 @@ The Scrum methodology makes use of so-called Sprints in the development process 
 \end{multicols}
 \end{enumerate}
 
-
 \noindent The development of this project, due to the smaller size of the group, only made use of one initial planning phase for each Sprint and the Review and Retrospective activities were consolidated into discussing what had been done at each Sprint and what should be moved forward to the next Sprint.
 
 \subsection{Article}
@@ -82,7 +81,6 @@ Before describing the development life cycle of the artefact, there are some def
 \item An \underline{Asset} refers to any digital item that you can use in your game or project.
 \item A \underline{Tag} is similar to a layer mask.
 \end{enumerate}
-
 
 \subsection{Sprint 1: Know the Basics}
 The initial sprint for development of the artefact had a main focus on each group member learning the basics of both game design in general as well the how to use the Unity Editor, specifically the 2019.4.22f version. The reason for going with this build of the editor was due to the fact that at the time, it was one that was targeted for long term support by Unity. 
@@ -206,7 +204,6 @@ This script, when placed onto any GameObject like as with the linking script, wi
 
 \noindent This sprint was concluded when all the above mentioned items were completed in addition to certain others from the remaining group members. During the review and retrospective stages, other functions and scripts were discussed for implementation in the following sprint.
 
-
 \subsection{Sprint 3: Full Scale Development}
 This sprint made use of the base developed in the previous one. During this sprint, the main focus was on developing the game in full based of the work already done. It also included the creation of certain assets, additional scripts, "quality of life" features and the final individual levels. These included:
 \begin{itemize}
@@ -262,138 +259,153 @@ The script can be used in multiple ways as it allows the assignment of both a tr
   \includegraphics[width=1\linewidth]{Figures/finportb.png}
   \caption{Tutorial Specific Re-colouration}
 \end{subfigure}
-\caption{Finalised Portal Assest}
+\caption{Finalised Portal Prefab}
 \label{portals}
 \end{figure}
 
 \noindent \textbf{Moving Platforms}\\
 This script works similarly to the rotation script as instead of rotating the object , this script moves an object between two points in a scene. This script makes use of two Empty GameObjects, that being a GameObject with only positional and rotational information without any assets attached, as the two points a GameObject will be moved between. The GameOjbect being moved has its' position updated constantly along the path using the \texttt{Lerp()} function which places a GameObject on a path between two points depending on a decimal percentage value. When the GameObject reaches a point, it moves back in the opposite direction  towards the other. This process is repeated infinitely.
 \\\\
-This script could also be used on any GameObject, such as with the Portal Prefab, but was origionally intended for moving platforms only. As such, the player movement script was updated to include the implementation of a platform moving the Player with it. This was accomplished by adding a Tag to any GameObject which is intended as a platform and 
+This script could also be used on any GameObject, such as with the Portal Prefab, but was originally intended for moving platforms only. As such, the player movement script was updated to include the implementation of a platform moving the Player with it. This was accomplished by adding a Tag to any GameObject which is intended as a platform and in the player movement script having a function, \texttt{OnPlatform()}, return a boolean value as with \texttt{OnFloor()} and \texttt{OnSlope()}. When true, the raycast used to determine the boolean is also used to get the GameObject platform and apply a subtle force in the direction of the platform.
 \\\\
 \textbf{Ending a Level}\\
-
-
-\textbf{Tutorial Level Development}\\
-
-
-
+This script is used on the completion of a level to load the next level in the gameplay sequence. This is done using the collider of the ball GameObject and Unity's SceneManagement library.
+\\\\
+To progress to the next level, the user must throw the ball GameObject into the designated end goal GameObject and once the \texttt{OnTriggerEnter()} triggers it calls the function \texttt{nextLevel()} which completes a check to identify which scene is loaded and if it is one that has a next level after it, that next level is loaded. This also makes use of the build index of each scene.
+\newpage
+\noindent \textbf{Tutorial Level Development}\\
+This next section details the development of the tutorial level. This includes level design plans and screenshots of the final version of each section of the level. Each section of the tutorial was designed in such a way that it would teach the user the various mechanics implemented in the game.
+\\\\
+The first provisional plan made was for the entire level in a high level overview of what would be handled and the general layout of where. This includes laying out each individual rooms location in relation to the level as well the beginning and end points. This is shown in Figure \ref{full}.
 %Full Level
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/fullplan.png}
   \caption{Provisional Plan}
 \end{subfigure}%
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/full.png}
   \caption{Screenshot in Unity Editor}
 \end{subfigure}
 \caption{Layout of Full Level (Tutorial)}
+\label{full}
 \end{figure}
+
+\noindent The next piece of the level to be designed was the so-called Hub Room. This is the section in the level where the user partakes in the various tutorials. The incorporation of portals was intended from the beginning but for a length of time, the hub room made use of the drop-zones as shown in Figure \ref{hub}. Nonetheless, once the necessary scripts were developed, the portal prefab was developed and consequently incorporated. 
 
 %Hub
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/hubplan.png}
   \caption{Provisional Plan}
 \end{subfigure}%
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/hub.png}
   \caption{Screenshot in Artefact}
 \end{subfigure}
 \caption{Layout of Hub Room}
+\label{hub}
 \end{figure}
+
+\noindent The platforming tutorial was designed as a tower to illustrate the vertical movement capabilities of the player and the movement script. This tutorial made use of moving platforms and most of the player movement script movement-based functions - i.e. \texttt{Jump()} and \texttt{Crouch()}. The goal of this tutorial was to climb the tower and drop down the centre towards a portal. Figure \ref{platty} shows the plan and final implementation of this section. 
 
 %Platform
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/platformplan.png}
   \caption{Provisional Plan}
 \end{subfigure}%
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/platform.png}
   \caption{Screenshot in Artefact}
 \end{subfigure}
 \caption{Layout of Platforming Tutorial}
+\label{platty}
 \end{figure}
+
+\noindent Wallrunning was also added to the player movement script during this development phase. This makes use of the orientation GameObject mentioned earlier as well as two raycasts to determine if the player is next to a wall and can wallrun. Furthermore, a player can only wall run if the function \texttt{OnFloor()} returns false, that is if the player is next to a wall and is not on the floor. The basic goal of this tutorial is to reach the other side of the room by using the provided walls. If a player were to fall off while attempting this they would be teleported to the nearest floor and given the chance to try again - this being another use of the teleport script. Once the player reaches the other side and collides with the particle system the door to the portal in the room is moved and a bridge is brought into the room if the user does not want to wallrun back across the room. Figure \ref{wallrun} illustrates the plan and final implementation of this. 
 
 %WallRun
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/wallplan.png}
   \caption{Provisional Plan}
 \end{subfigure}%
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/wall.png}
   \caption{Screenshot in Artefact}
 \end{subfigure}
 \caption{Layout of Wall Running Tutorial}
+\label{wallrun}
 \end{figure}
+
+\noindent The next tutorial is that of throwing. This tutorial makes heavy use of the teleport script in multiple forms. The first obstacle is a set of barriers that will be moved when hit with the ball GameObject. The second is to hit a moving target upon which the player will be moved to the next section of this tutorial. The last task is to hit a stationary target which the user must read the sign near it and solve the riddle. The player must jump off the ledge and turn around to hit the target. Before the target is hit, once the player hits the floor they are teleported back to the top of the ledge. Once the target is hit, the player is no longer teleported up and a wall is removed revealing a portal; to conclude this tutorial. Figure \ref{throw} shows the plan and finalisation of this section.
 
 %Throw
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/throwplan.png}
   \caption{Provisional Plan}
 \end{subfigure}%
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/throw.png}
   \caption{Screenshot in Unity Editor}
 \end{subfigure}
 \caption{Layout of Throw Tutorial}
+\label{throw}
 \end{figure}
 
 %Mcap
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/mcapplan.png}
   \caption{Provisional Plan}
 \end{subfigure}%
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/mcap.png}
   \caption{Screenshot in Artefact}
 \end{subfigure}
 \caption{Layout of Movement Tutorial}
+\label{moves}
 \end{figure}
 
 %Enemy
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/enemyplan.png}
   \caption{Provisional Plan}
 \end{subfigure}%
-\begin{subfigure}{0.5\textwidth}
+\begin{subfigure}{0.45\textwidth}
   \centering
   \includegraphics[width=1\linewidth]{Figures/enemy.png}
   \caption{Screenshot in Unity Editor}
 \end{subfigure}
 \caption{Layout of Enemy Tutorial}
+\label{enemy}
 \end{figure}
 
-
-
-
-\textbf{Pause Menu}\\
+\noindent \textbf{Pause Menu}\\
+The last feature to be added to the game was the implementation of a pause menu. This included a script to handle the toggling of sound on a level and the cursor visibility when the game is paused. Additionally, this included the development of the pause screen into the player prefab - it also being toggled on and off. The game can be paused with the use of the ESC key. Once paused, a user can either resume playing by using ESC again or making use of the button on screen. Furthermore, buttons were included on the top right side of the screen which allows a user to select which scene they wish to go to. Figure \ref{pause} shows the pause menu along with the associated buttons.
 
 \begin{figure}[H]
 \centering
@@ -402,6 +414,14 @@ This script could also be used on any GameObject, such as with the Portal Prefab
 \label{pause}
 \end{figure}
 
+\noindent The construction of the pause menu, other than the script was directly added to the player prefab in the form of images and text overlays. These were then linked to the functions in the script which handled all the various buttons shown. Figure \ref{pause2} illustrates the relations and links needed for the pause menu - it also shows most of the player prefab configuration.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{Figures/pause2.png}
+\caption{Pause Menu}
+\label{pause2}
+\end{figure}
 
 \subsection{Sprint 4: Build and Publish}
 This sprint was focused on having the artefact being available standalone without the need of the editor.
@@ -411,7 +431,6 @@ The Unity Editor has a function to export the game as a standalone application w
 Once the build settings had been finalised the artefact was exported from the Unity Editor as a standalone application. During this process, unforeseen complications arose. The main issue here was that certain references between certain scripts were returning null values. These references functioned as intended while within the editor which caused initial confusion. As a result from this, certain scripts were slightly reworked so that the necessary references would work again. 
 \\\\
 Once the above complication was dealt with, the game was published on itch.io, a video game hosting website, where it is available for download\footnote{\url{https://josh-scg.itch.io/puzzle-ball-spherical-shadows}}. Figure \ref{thumb} is the icon used as the icon that is displayed on the website. 
-
 
 \begin{figure}[H]
 \centering
@@ -459,7 +478,6 @@ This phase included the writing of the article from the introduction until the f
 
 \noindent The remaining two phases are a part of the following sprint in development as this sprint was concluded when the above was completed.
 
-
 \subsection{Sprint 5: Finalise Article}
 The final phase of developing the article involved formatting it in an academic journal style as well as completing the remaining sections from Sprint 4. 
 \\\\
@@ -468,10 +486,6 @@ From the literature study and review of the case studies, various theories were 
 Any and all correlations between these theories and design principles were mapped out and consolidated to produce the several qualities a serious game needs to be effective in an educational context. Some principles applied to a certain rule were also applied to others as well when it was deemed to be a helpful factor for the specific quality. The results of this are discussed in the following chapter - Chapter \ref{Chapter4}.
 \\\\ 
 The final aspect of development of this article was to format it in an academic journal style. For this, the PDF creation software \LaTeX was used along with an IEEE template document.
-
-
-
-
 
 \section{Conclusion}
 This section detailed the developmental processes and phases of both the artefact and article that form a part of this project as well as the issues faced at certain points. For both, an adapted Agile methodology closer to the Scrum methodology was used with the article blending that with design science.
