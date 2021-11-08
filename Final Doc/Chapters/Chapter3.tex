@@ -267,7 +267,9 @@ The script can be used in multiple ways as it allows the assignment of both a tr
 \end{figure}
 
 \noindent \textbf{Moving Platforms}\\
-This script works similarly to the rotation script as instead of rotating the object , this script moves an object between two points in a scene. 
+This script works similarly to the rotation script as instead of rotating the object , this script moves an object between two points in a scene. This script makes use of two Empty GameObjects, that being a GameObject with only positional and rotational information without any assets attached, as the two points a GameObject will be moved between. The GameOjbect being moved has its' position updated constantly along the path using the \texttt{Lerp()} function which places a GameObject on a path between two points depending on a decimal percentage value. When the GameObject reaches a point, it moves back in the opposite direction  towards the other. This process is repeated infinitely.
+\\\\
+This script could also be used on any GameObject, such as with the Portal Prefab, but was origionally intended for moving platforms only. As such, the player movement script was updated to include the implementation of a platform moving the Player with it. This was accomplished by adding a Tag to any GameObject which is intended as a platform and 
 \\\\
 \textbf{Ending a Level}\\
 
@@ -399,14 +401,6 @@ This script works similarly to the rotation script as instead of rotating the ob
 \caption{Pause Menu}
 \label{pause}
 \end{figure}
-
-
-
-
-
-
-
-
 
 
 \subsection{Sprint 4: Build and Publish}
