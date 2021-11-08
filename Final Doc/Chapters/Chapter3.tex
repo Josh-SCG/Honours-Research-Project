@@ -67,6 +67,21 @@ Design Science was used in combination with the Scrum Agile methodology for the 
 
 \section{Description of the Development of the Artefact}
 This section will detail the development of the computer game artefact but will only include specifics on the aspects which were worked on individually - as such the contributions and accompanying processes of the other group members will not be discussed. 
+\\\\
+Before describing the development life cycle of the artefact, there are some definitions to be aware of:
+\begin{enumerate}
+\item \underline{User} refers to the real person making use of the artefact.
+\item \underline{Player} refers to the in artefact character controlled by a user.
+\item A \underline{Level} or \underline{Scene} refers to a specific section within the artefact - for example, the main menu, tutorial and end credits are all scenes while only the tutorial would additionally be classified as a level.
+\item A \underline{Prefab} allows for the creation, configuration and storage of a \underline{GameObject} - this being any object within the artefact - with all its components, properties and child GameObjects for easy drag and drop usage.
+\item \underline{Character Controller} refers to how the in-game character, the Player, is affected by a user's inputs.
+\item The \underline{Raycast} function projects a ray into the scene, returning a boolean value if a target was successfully hit in addition to other information, such as distance.
+\item A \underline{Collider} component refers to the shape of an object for the purposes of physical collisions and is invisible.
+\item \underline{Layer Mask} refers to an editor based flag that interacts with any raycast or collider based functions to filter out any colliders which are not to be included in generating collisions with.
+\item A \underline{Rigid Body} components allows a GameObject to react to the real-time physics engine - this includes gravity, forces, etc.
+\item An \underline{Asset} refers to any digital item that you can use in your game or project.
+\end{enumerate}
+
 
 \subsection{Sprint 1: Know the Basics}
 The initial sprint for development of the artefact had a main focus on each group member learning the basics of both game design in general as well the how to use the Unity Editor, specifically the 2019.4.22f version. The reason for going with this build of the editor was due to the fact that at the time, it was one that was targeted for long term support by Unity. 
@@ -84,11 +99,11 @@ As a part this process, each member of the group was tasked with developing a si
 
 \noindent The resources made use of for this particular sprint, those being any material used in the knowledge gathering phase, were mostly found through a publicly available online excel sheet\footnote{\url{https://docs.google.com/spreadsheets/d/1QhFyPfYSjHv7PjibGrslF3mNW_CIDXWv9o-iQgLbu1o}} which contains information of various aspects of game design.
 \\\\
-This sprint was concluded upon the discussion of what each group member had learnt and with the next sprint being planned. 
+This sprint was concluded upon the discussion of what each group member had learnt and with the next sprint being planned. The idea to have the game centre around the use of a ball object was also decided at this time.
 \\\\
 The key aspects from this sprint's knowledge gathering phase were that the ProBuilder tool kit within the Unity Editor would be used for the construction and development of levels moving forward as it allowed for the creation on a singular large object which could be adjusted and shaped. Using this one object in place of many smaller ones arranged in the same shape allowed for a less computational intensive process when the application is run due to the way a scene is loaded. 
 \\\\
-Additionally, the character controller, that being how the in-game character is affected by a user's inputs, would be developed from the ground up in place of using the one pre-built by Unity as it allows for the most customisation of features. 
+Additionally, the character controller would be developed from the ground up in place of using the one pre-built by Unity as it allows for the most customisation of features. 
 
 \subsection{Sprint 2: Initial Development}
 During this sprint, the basis to develop future levels was completed. This included, from this contribution, the development of various back-end scripts. These scripts form the basic character controller of the game are used in conjunction. These included scripts for:
@@ -105,10 +120,10 @@ During this sprint, the basis to develop future levels was completed. This inclu
 \end{itemize}
 \newpage
 \noindent \textbf{Camera Movement}\\
-The camera movement script handles inputs from the mouse and converts them into how the main character perspective camera should be rotated. Additionally, it also rotates the player model and a hidden orientation object which is used to keep track of the direction the user is looking for other functions. The range of motion is restricted with the \texttt{Mathf.Clamp()} function from Unity's Library in such a manner that the user can freely move horizontally but not vertically. 
+The camera movement script handles inputs from the mouse and converts them into how the main perspective camera should be rotated. Additionally, it also rotates the player and a hidden orientation object which is used to keep track of the direction the user is looking for other functions. The range of motion is restricted with the \texttt{Mathf.Clamp()} function from Unity's Library in such a manner that the user can freely move horizontally but not vertically. 
 \\\\
 \textbf{Player Movement}\\
-The player movement script is responsible for handling all movement based interactions and as such was tested intensively with the values for variables being tweaked constantly. Figure \ref{flrtst} shows the in engine scene where the testing took place at first. 
+The player movement script is responsible for handling all movement based interactions and as such was tested intensively with the values for variables being tweaked constantly. Figure \ref{flrtst} shows the in engine scene where the testing took place at first. The main proponent of this script is that the Player is able to interact, and be interacted on by, the physics engine of the game. This is done by giving the Player GameObject a rigid body.
 
 \begin{figure}[H]
 \centering
@@ -125,9 +140,9 @@ The player movement script is responsible for handling all movement based intera
 \item Other functionality such as jumping, crouching and dashing
 \end{itemize}
 
-\noindent The floor detection aspect of this script is vital to the entire functionality of the movement system as it declares when, and what type of, movement is being applied to the player from a user's inputs. At this point, there are two main components to this functionality - checking when the player is on flat ground as well as a slanted area such as a slope or hill. 
+\noindent The floor detection aspect of this script is vital to the entire functionality of the movement system as it declares when, and what type of, movement is being applied to the player from a user's inputs. At this point, there are two main components to this functionality - checking when the Player is on flat ground as well as a slanted area such as a slope or hill. 
 \\\\
-The \texttt{OnFLoor()} function is used to determine whenever the player is on an object with the Floor layermask and returns a boolean based on the result. A layermask is an editor based flag that interacts with any raycast or collider based functions. When the \texttt{OnFLoor()} returns false, the user's inputs are greatly reduced resulting in it having no impact in some cases. Due to this, the function went through several iterations until one was found to be effective in all use cases. 
+The \texttt{OnFLoor()} function is used to determine whenever the player is on an object with the Floor layermask and returns a boolean based on the result. When the \texttt{OnFLoor()} returns false, the user's inputs are greatly reduced resulting in it having no impact in some cases. Due to this, the function went through several iterations until one was found to be effective in all use cases. 
 \\\\
 The initial function made use of a singular downward raycast, that being an object used which returns a boolean depending on if an object with the appropriate mask or tag is in its' path, which caused issues when a player would be halfway over some edge within a scene. The second iteration saw use of the \texttt{CheckSphere()} function which returns a boolean if the object with a specific mask is within the bounds of a sphere originating at a certain point. This method of implementation had issues where a user would be classified as "on the floor" if they were close enough to a wall while in the air. The final implementation of this function took inspiration from how the colliders in a two dimensional game work within Unity - that being a box collider. The \texttt{OverlapBox()} works similarly to the \texttt{CheckSphere()} function with the distinction bring the shape of the object. This allowed for a tighter fitting method of detection which has no known issues. Figure \ref{floor} illustrates these issues visually. 
 
@@ -138,11 +153,16 @@ The initial function made use of a singular downward raycast, that being an obje
 \label{floor}
 \end{figure}
 
-\noindent The user's input for movement consisted of the W, A, S and D key on the keyboard with W and S affecting vertical movement and A and D affecting the horizontal movement. The movement direction was calculated from these and the current state of the orientation object with a force added in that direction through the \texttt{AddForce()} function. The friction and drag variables were handled by Unity with the script altering the values depending on where the player is - either on the floor or the air. 
+\noindent The User's input for movement consisted of the W, A, S and D key on the keyboard with W and S affecting vertical movement and A and D affecting the horizontal movement. The movement direction was calculated from these and the current state of the orientation object with a force added in that direction through the \texttt{AddForce()} function. The friction and drag variables were handled by Unity with the script altering the values depending on where the player is - either on the floor or the air. 
 \\\\
-The remaining functions this script implements are \texttt{Jump()} using the Space Bar, \texttt{Dash()} with the Left Shift key, \texttt{Crouch()} and \texttt{unCrouch()} which are activated with the Left Control key. The \texttt{Jump()} adds a vertical force to the player which simulates a jump and can only be done if they are on the floor. \texttt{Dash()} on the other hand can be used either on the floor, where an additional force as added to the player launching them forward, or in the air, where the player is moved in the direction the camera is facing. This function can also be used infinitely. \texttt{Crouch()} and \texttt{unCrouch()} are inverse functions, meaning the effects of one are undone by the other. When used, the player is shrunken down slightly and has their movement speed reduced.
-\\\\
-\textbf{Linking Objects}\\
+The remaining functions this script implements are \texttt{Jump()} using the Space Bar, \texttt{Dash()} with the Left Shift key, \texttt{Crouch()} and \texttt{unCrouch()} which are activated with the Left Control key. 
+\begin{itemize} 
+\item \texttt{Jump()} adds a vertical force to the player which simulates a jump and can only be done if they are on the floor. 
+\item \texttt{Dash()} on the other hand can be used either on the floor, where an additional force as added to the player launching them forward, or in the air, where the player is moved in the direction the camera is facing. This function can also be used infinitely. 
+\item \texttt{Crouch()} and \texttt{unCrouch()} are inverse functions, meaning the effects of one are undone by the other. When used, the player is shrunken down slightly and has their movement speed reduced.
+\end{itemize}
+
+\noindent \textbf{Linking Objects}\\
 This script caused two objects, which are set in the editor, as shown in Figure \ref{link}, where the script is placed on one of the objects and the other assigned as the "Linked Object Position" variable. This caused the object the script is placed on to warp to and follow the other object. This was used for the ball object the player interacts with and the camera.
 
 \begin{figure}[H]
@@ -153,10 +173,10 @@ This script caused two objects, which are set in the editor, as shown in Figure 
 \end{figure}
 
 \noindent \textbf{Pick Up}\\
-This script provides functionality for the user to interact with objects, specifically the ball object used throughout the game, and be able to pick them up, hold them for a time and throw them when required. It is comprised of three main functions - \texttt{PickUpObject()}, \texttt{DropThrowObject()} and \texttt{MoveObject()}. This script uses a raycast sent towards the centre of the screen and if an object with a rigid body, such as the player (excluded from this script) which is an object that is capable of interacting with the physics engine of the game, is in the path it is picked up by using the E key. Once this is done the object is moved toward the player's hand, shrunken down slightly and the collider of the object made inert. From this point, the object is then moved alongside the player with the linking script and when E is pressed while the player has an object it is launched in the direction the player is looking - that is the centre of the screen.
+This script provides functionality for the user to interact with objects, specifically the ball GameObject used throughout the game, and be able to pick them up, hold them for a time and throw them when required. It is comprised of three main functions - \texttt{PickUpObject()}, \texttt{DropThrowObject()} and \texttt{MoveObject()}. This script uses a raycast sent towards the centre of the screen and if a GameObject with a rigid body, excluding the player, is in the path it is picked up by using the E key. Once this is done the object is moved toward the player's hand, shrunken down slightly and the collider of the GameObject made inert. From this point, the GameObject is then moved alongside the player with the linking script and when E is pressed while the player has an GameObject it is launched in the direction the player is looking - that being the centre of the screen.
 \\\\
 \textbf{Object Rotation}\\
-This script, when placed onto any game object like as with the linking script, will cause the object to rotate at a specific speed set in the editor. Figure \ref{rot} demonstrated how this looks. It makes use of the \texttt{RotateAround()} function where the object was rotated around its' downward facing vector.
+This script, when placed onto any GameObject like as with the linking script, will cause the GameObject to rotate at a specific speed set in the editor. Figure \ref{rot} demonstrated how this looks. It makes use of the \texttt{RotateAround()} function where the GameObject is rotated around its' downward facing vector.
 
 \begin{figure}[H]
 \centering
@@ -165,7 +185,7 @@ This script, when placed onto any game object like as with the linking script, w
 \label{rot}
 \end{figure}
 
-\noindent Aside from scripts, a player prefab and crosshair were created. A prefab is a collection of objects, scripts and/or relations set in the editor that can be stored as if it were one object so that it can be "dragged and dropped" as needed. Figure \ref{cross} shows the place holder crosshair that was used until this point and the finalised crosshair. This was implemented to display where the centre of the screen is to a user.
+\noindent Aside from scripts, a Player Prefab and crosshair were created. This Prefab is comprised of the Player model, the necessary scripts and relation for the Character Controller to function. Figure \ref{cross} shows the place holder crosshair that was used until this point and the finalised crosshair. This was implemented to display where the centre of the screen is to a user.
 
 \begin{figure}[H]
 \centering
