@@ -100,6 +100,8 @@ During this sprint, the basis to develop future levels was completed. This inclu
 \item Linking two objects together\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/LinkObjectMovement.cs}{LinkObjectMovement.cs}}
 
 \item Ability to pick up objects\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/PickUp.cs}{PickUp.cs}}
+
+\item Object Rotation\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/ObjectRotateScript.cs}{ObjectRotateScript.cs}}
 \end{itemize}
 \newpage
 \noindent \textbf{Camera Movement}\\
@@ -153,7 +155,17 @@ This script caused two objects, which are set in the editor, as shown in Figure 
 \noindent \textbf{Pick Up}\\
 This script provides functionality for the user to interact with objects, specifically the ball object used throughout the game, and be able to pick them up, hold them for a time and throw them when required. It is comprised of three main functions - \texttt{PickUpObject()}, \texttt{DropThrowObject()} and \texttt{MoveObject()}. This script uses a raycast sent towards the centre of the screen and if an object with a rigid body, such as the player (excluded from this script) which is an object that is capable of interacting with the physics engine of the game, is in the path it is picked up by using the E key. Once this is done the object is moved toward the player's hand, shrunken down slightly and the collider of the object made inert. From this point, the object is then moved alongside the player with the linking script and when E is pressed while the player has an object it is launched in the direction the player is looking - that is the centre of the screen.
 \\\\
-Aside from scripts, a player prefab and crosshair were created. A prefab is a collection of objects, scripts and/or relations set in the editor that can be stored as if it were one object so that it can be "dragged and dropped" as needed. Figure \ref{cross} shows the place holder crosshair that was used until this point and the finalised crosshair. This was implemented to display where the centre of the screen is to a user.
+\textbf{Object Rotation}\\
+This script, when placed onto any game object like as with the linking script, will cause the object to rotate at a specific speed set in the editor. Figure \ref{rot} demonstrated how this looks. It makes use of the \texttt{RotateAround()} function where the object was rotated around its' downward facing vector.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{Figures/rot.png}
+\caption{Object Rotation Set in Editor}
+\label{rot}
+\end{figure}
+
+\noindent Aside from scripts, a player prefab and crosshair were created. A prefab is a collection of objects, scripts and/or relations set in the editor that can be stored as if it were one object so that it can be "dragged and dropped" as needed. Figure \ref{cross} shows the place holder crosshair that was used until this point and the finalised crosshair. This was implemented to display where the centre of the screen is to a user.
 
 \begin{figure}[H]
 \centering
@@ -175,6 +187,25 @@ Aside from scripts, a player prefab and crosshair were created. A prefab is a co
 
 
 \subsection{Sprint 3: Full Scale Development}
+This sprint made use of the base developed in the previous one. During this sprint, the main focus was on developing the game in full based of the work already done. It also included the creation of certain assets, additional scripts, "quality of life" features and the final individual levels. These included:
+\begin{itemize}
+\item Ball return functionality\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/BallReturn.cs}{BallReturn.cs}}
+
+\item Teleportation functionality \footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/TeleportScript.cs}{TeleportScript.cs}} with the inclusion of a portal prefab
+
+\item Implementation of moving platforms\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/MovingPlatforms.cs}{MovingPlatforms.cs}}
+
+\item Level Switching after completion\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/EndLevel.cs}{EndLevel.cs}}
+
+\item The development of the first level - that being the tutorial.
+
+\item Ability to pause the game and navigate scenes\footnote{\href{https://github.com/Josh-SCG/Spherical_Shadows/blob/main/Assets/Scripts/PauseMenu.cs}{PauseMenu.cs}}
+\end{itemize}
+
+\textbf{Ball Return}\\
+
+
+\textbf{Teleportation and Portal Prefab}\\
 
 
 \begin{figure}[H]
@@ -198,6 +229,14 @@ Aside from scripts, a player prefab and crosshair were created. A prefab is a co
 \caption{Finalised Portal Assest}
 \end{figure}
 
+
+\textbf{Ending a Level}\\
+
+
+\textbf{Tutorial Level Development}\\
+
+
+
 %Full Level
 \begin{figure}[H]
 \centering
@@ -214,7 +253,6 @@ Aside from scripts, a player prefab and crosshair were created. A prefab is a co
 \caption{Layout of Full Level (Tutorial)}
 \end{figure}
 
-
 %Hub
 \begin{figure}[H]
 \centering
@@ -230,7 +268,6 @@ Aside from scripts, a player prefab and crosshair were created. A prefab is a co
 \end{subfigure}
 \caption{Layout of Hub Room}
 \end{figure}
-
 
 %Platform
 \begin{figure}[H]
@@ -280,7 +317,6 @@ Aside from scripts, a player prefab and crosshair were created. A prefab is a co
 \caption{Layout of Throw Tutorial}
 \end{figure}
 
-
 %Mcap
 \begin{figure}[H]
 \centering
@@ -314,11 +350,25 @@ Aside from scripts, a player prefab and crosshair were created. A prefab is a co
 \end{figure}
 
 
+
+
+\textbf{Pause Menu}\\
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{Figures/pause.png}
 \caption{Pause Menu}
+\label{pause}
 \end{figure}
+
+
+
+
+
+
+
+
+
 
 \subsection{Sprint 4: Build and Publish}
 
@@ -332,8 +382,12 @@ Aside from scripts, a player prefab and crosshair were created. A prefab is a co
 
 \section{Description of the Development of the Article}
 %Comprehensive report on the way in which each phase of the life cycle was applied in the development of this artefact.
+This section will detail the development of the article and the specific sprints taken to complete it. 
 
 \subsection{Sprint 1: Research Proposal}
+As stated, this is the "Awareness of Problem" process within design science. As the topic the research was to be conducted on was open-ended, this sprint focused on finding a topic. There was a personal interest in educational games and as such it became the first topic to be examined if it was viable for a research study. This included doing research into what issues educational games could solve. The results of this were a list of potential issues ranging from using them to aid psychological treatment to the use of simulations for training. The issue settled on was how they can be used in educational institutions which then lead into further research into acceptance of games and existing academically developed games. 
+\\\\
+Once this research was completed, a research proposal was drafted and submitted as the conclusion to this step.
 
 \subsection{Sprint 2: Project Planning}
 
