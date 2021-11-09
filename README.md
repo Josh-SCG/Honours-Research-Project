@@ -20,8 +20,8 @@ The reaserch project is divided into several sections as indicated below for sub
   - [x] Planning of Project
 - [x] Addendum B
   - [x] Literature Study
-- [ ] Addendum C
-  - [ ] Project Lifecycle
-- [ ] Final Documentation
+- [x] Addendum C
+  - [x] Project Lifecycle
+- [x] Final Documentation
 
 The repository will include the final versions submitted for each of the aforementioned milestones as well as the sources used in them.
