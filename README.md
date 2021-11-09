@@ -9,7 +9,7 @@ The project is based in the field of "Entertainment Computing"
 
 The research project was done individually on a topic of our own choice that was approved by our supervisor, while the development of the computer game was done as a group. 
 
-This repository only contains the documentation and files relating to the project as a whole and the research project. The repositiory for the computer game source code can be found at [this repository](https://github.com/GCWehmeyer/Spherical_Shadows) and the finished computer game can be found and downloaded from [here](https://josh-scg.itch.io/puzzle-ball-spherical-shadows).
+This repository only contains the documentation and files relating to the project as a whole and the research project. The repositiory for the computer game source code can be found at [this repository](https://github.com/GCWehmeyer/Spherical_Shadows) or [this one](https://github.com/Josh-SCG/Spherical_Shadows) and the finished computer game can be found and downloaded from [here](https://josh-scg.itch.io/puzzle-ball-spherical-shadows).
 
 
 # The Research 
